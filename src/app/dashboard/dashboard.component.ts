@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
+// *Alias de importaciones
+import { SidemenuComponent } from '@shared/sidemenu/sidemenu.component';
 
 @Component({
+  host: { 'data-component': 'dashboard' },
   standalone: true,
-  imports: [ RouterModule ],
+  imports: [RouterModule, SidemenuComponent],
   templateUrl: './dashboard.component.html',
-  styles: ``
+  styles: ``,
 })
-export default class DashboardComponent {
-
-}
+export default class DashboardComponent {}
