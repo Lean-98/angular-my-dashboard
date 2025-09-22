@@ -58,6 +58,18 @@ export const routes: Routes = [
           ),
       },
       {
+        path: 'input-output',
+        title: 'Input Output',
+        loadComponent: () =>
+          import('./dashboard/pages/input-output/input-output.component'),
+      },
+      {
+        path: 'material',
+        title: 'Angular Material',
+        loadComponent: () =>
+          import('./dashboard/pages/material/material.component'),
+      },
+      {
         path: '',
         redirectTo: 'control-flow',
         pathMatch: 'full',
@@ -66,7 +78,14 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/dashboard',
+    // redirectTo: '/dashboard',
+    redirectTo: (route) => {
+      // const authService = inject(AuthService);
+      // if (authService.isLoggedIn()) {
+      //   return '/dashboard';
+      // console.log(route);
+      return '/dashboard';
+    },
     pathMatch: 'full',
   },
 ];
